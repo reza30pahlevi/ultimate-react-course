@@ -143,6 +143,22 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
+// cara normal
+// const book = getBook(2);
+// const title = book.title;
+// const author = book.author;
+// console.log(title, author);
+
+// cara destructuring
+const book = getBook(2);
+book;
+
+const { title, author, genres } = book;
+console.log(title, author, genres);
+
+const [primaryGenre, secondaryGenre] = genres;
+console.log(primaryGenre, secondaryGenre);
+
 // Destructuring
 
 /*
@@ -306,5 +322,4 @@ async function getTodos() {
 
 const todos = getTodos();
 console.log(todos);
-
 console.log("jonas");
