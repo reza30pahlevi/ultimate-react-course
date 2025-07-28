@@ -156,5 +156,9 @@ book;
 const { title, author, genres } = book;
 console.log(title, author, genres);
 
-const [primaryGenre, secondaryGenre] = genres;
-console.log(primaryGenre, secondaryGenre);
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+console.log(primaryGenre, secondaryGenre, ...otherGenres);
+
+//spread
+const newGenres = ["Epic Fantasy", ...genres];
+newGenres;
