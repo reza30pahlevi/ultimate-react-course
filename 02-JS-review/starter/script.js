@@ -162,3 +162,11 @@ console.log(primaryGenre, secondaryGenre, ...otherGenres);
 //spread
 const newGenres = ["Epic Fantasy", ...genres];
 newGenres;
+
+//nambahin object menggunakan spread dan overwriting spread
+const updatedBook = {
+  ...book,
+  moviePublicationDate: "2001 - 12 - 9",
+  pages: 212,
+};
+updatedBook;
