@@ -153,7 +153,7 @@ function getBook(id) {
 const book = getBook(2);
 book;
 
-const { title, author, genres } = book;
+const { title, author, genres, pages, publicationDate } = book;
 console.log(title, author, genres);
 
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
@@ -170,3 +170,10 @@ const updatedBook = {
   pages: 212,
 };
 updatedBook;
+
+// template literals.
+
+const summary = `${title} is a ${pages}-page book that was written by ${author} and was released in ${
+  publicationDate.split("-")[0]
+}`;
+summary;
