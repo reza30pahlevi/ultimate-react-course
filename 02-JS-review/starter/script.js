@@ -153,7 +153,8 @@ function getBook(id) {
 const book = getBook(2);
 book;
 
-const { title, author, genres, pages, publicationDate } = book;
+const { title, author, genres, pages, publicationDate, hasMovieAdaptation } =
+  book;
 console.log(title, author, genres);
 
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
@@ -167,7 +168,7 @@ newGenres;
 const updatedBook = {
   ...book,
   moviePublicationDate: "2001 - 12 - 9",
-  pages: 212,
+  pages: 1001,
 };
 updatedBook;
 
@@ -175,5 +176,9 @@ updatedBook;
 
 const summary = `${title} is a ${pages}-page book that was written by ${author} and was released in ${
   publicationDate.split("-")[0]
-}`;
+}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted into a movie`;
 summary;
+
+const pagesRange = pages > 1000 ? "over a thousand" : "less than a thousand";
+pagesRange;
+console.log(`The book has ${pagesRange} pages`);

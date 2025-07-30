@@ -25,8 +25,32 @@ const books = [
 
 const [firstBook, secondBook, ...remainingBooks] = books;
 books;
+remainingBooks;
 
 //latihan 2: ambil properti title dan author dari buku pertama, simpan sisanya di variabel others.
 const book = books[0];
 const { author, title, ...others } = book;
 book;
+others;
+
+//latihan 3: Buat array baru booksWithNew yang berisi semua buku lama, plus satu buku tambahan:
+const newBook = {
+  id: 6,
+  title: "Percy Jackson",
+  author: "Rick Riordan",
+  year: 2005,
+};
+const bookWithNew = [...books, newBook];
+bookWithNew;
+
+//latihan 4: Buat updatedBook dari buku ke-2 (index 1), tapi ubah tahun (year) jadi 2020, tanpa mengubah original books.
+const bookT = books[1];
+const updatedBook = { ...bookT, year: 2020 };
+updatedBook;
+
+//latihan 5: Ambil book2, lalu ubah title-nya jadi huruf kapital semua (toUpperCase()).
+// Gabungkan hasilnya ke array modifiedBooks bersama buku lainnya.
+const [bookTwo, ...restBooks] = books;
+const updatedBook2 = { ...bookTwo, title: bookTwo.title.toUpperCase() };
+const modifiedBooks = [updatedBook2, ...restBooks];
+modifiedBooks;
