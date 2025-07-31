@@ -179,6 +179,46 @@ const summary = `${title} is a ${pages}-page book that was written by ${author} 
 }. The book has ${hasMovieAdaptation ? "" : "not"} been adapted into a movie`;
 summary;
 
+// ternaries
 const pagesRange = pages > 1000 ? "over a thousand" : "less than a thousand";
 pagesRange;
 console.log(`The book has ${pagesRange} pages`);
+
+// functions normal
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
+// arrow functions
+const getYear = (str) => str.split("-")[0];
+
+console.log(getYear(publicationDate));
+
+const ringkasan = `${title} dirilis pada tahun ${getYear(publicationDate)}`;
+ringkasan;
+
+//short circuiting and logical operators.
+//AND Operator. Otomatis akan return yang false. dan jika tidak ada yang false maka akan otomatis return pilihan kedua
+console.log(true && "some string");
+console.log(false && "some string");
+
+console.log(hasMovieAdaptation && "This book has a movie adaptation");
+
+//falsy value: 0, null, undefined. truthy value adalah apapun selain falsy value yang berarti akan menjadi true value.
+console.log("fulan" && "fulana"); //akan otomatis ke pilihan kedua karena value yang pertama adalah true karena bukan falsy
+console.log(0 && "fulana");
+
+//OR operator. kebalikan dari AND operator.
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+const spanishTranslation = book.translations.spanish || "Not Translated";
+spanishTranslation;
+
+console.log(book.reviews.librarything.reviewsCount); //ini hasilnya 0, berarti ada data. namun akan bermasalah jika menggunakan OR
+const countWrong = book.reviews.librarything.reviewsCount || "NO DATA";
+countWrong; //akan menunjukkan no data padahal ada data walaupun angka nya 0. Ini masalah.
+
+//Gunakan ?? agar hanya return undefined atau null, tanpa ada 0.
+const count = book.reviews.librarything.reviewsCount ?? "NO DATA";
+count;
